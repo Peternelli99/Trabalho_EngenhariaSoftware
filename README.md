@@ -12,3 +12,12 @@ Commits diretos e explicativos
 Utilizar uma branch pra cada cartão do kanban
 Commits iniciais na master devem ser avisados para todos os integrantes antes de serem feitos
 O projeto ficará dentro da pasta app
+
+##Boas praticas de codificação
+Código indentado por tabulação
+Nomes intuitivos para variaveis
+Nomes intuitivos para funções
+Comentários no código
+Todos os comandos de controle chaveados
+Evitar variaveis sem necessidade
+Testes exaustivos
