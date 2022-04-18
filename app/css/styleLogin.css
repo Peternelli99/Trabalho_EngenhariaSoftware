@@ -103,3 +103,13 @@ form input[type="submit"]:hover {
     background: linear-gradient(to right, #50AD8C, #1E7DC0);
 }
 
+footer{
+    position: fixed;
+    bottom: 5px;
+    color: white;
+}
+
+main .botao{
+    padding-left: 90px;
+}
+
