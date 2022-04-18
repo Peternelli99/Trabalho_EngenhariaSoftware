@@ -67,3 +67,7 @@ header{
     right: 10px;
     z-index: 1;
 }
+
+.btnCadastro{
+    text-align: end;
+}

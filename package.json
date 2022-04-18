@@ -1,0 +1,28 @@
+{
+  "name": "trabalho_engenhariasoftware",
+  "version": "1.0.0",
+  "description": "A ideia do projeto será uma plataforma onde as pessoas podem procurar e comprar os produtos e com isso elas ganham pontos que podem ser trocados por produtos ou aplicados em descontos em futuras compras.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "start": "nodemon ./app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peternelli99/Trabalho_EngenhariaSoftware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peternelli99/Trabalho_EngenhariaSoftware/issues"
+  },
+  "homepage": "https://github.com/Peternelli99/Trabalho_EngenhariaSoftware#readme"
+}
