@@ -20,6 +20,7 @@ body {
 main.container {
     background: rgba(255, 255, 255, 0.192);
     min-width: 320px;
+    max-width: 337px;
     min-height: 30vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
