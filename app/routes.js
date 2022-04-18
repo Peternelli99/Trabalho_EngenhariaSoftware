@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const CarroController = require('./controller/ProdutoController')
+const ProdutoController = require('./controllers/ProdutoController')
+
+router.get('/produtor/catalogo', ProdutoController.catalogarTodos)
 
 module.exports = router;
