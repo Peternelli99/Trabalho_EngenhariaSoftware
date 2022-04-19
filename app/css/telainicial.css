@@ -73,6 +73,10 @@ header{
     z-index: 1;
 }
 
+.btnCadastro {
+    text-align: end;    
+}
+
 main {
     background: rgba(255, 255, 255, 0.192);
     min-width: 320px;
