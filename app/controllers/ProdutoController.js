@@ -11,7 +11,7 @@ module.exports = {
                 nome: produtos[i].nome,
                 descricao: produtos[i].descricao,
                 preco: produtos[i].preco
-            })
+            });
         }
         
         res.json(json);
