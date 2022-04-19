@@ -7,6 +7,96 @@
     <title>Catálogo</title>
     <link rel="stylesheet" href="css/telainicial.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script>
+        //get catalogo
+        async function getContent() {
+            try {
+                const response = await fetch('http://localhost:3000/api/produtor/catalogo')
+                
+                const data = await response.json()
+                const teste = await data.result;
+
+                loop(teste)
+                
+            } catch (error) {
+                console.error('error')
+            }
+            
+        }
+        
+
+        async function loop(produtos, index) {
+            produtos.forEach(element => {
+                const novaLinha = document.createElement('tr')
+                novaLinha.innerHTML = `
+                    <td>${element.nome}</td>
+                    <td>${element.descricao}</td>
+                    <td>${element.preco}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" id="editar-${element.id}">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-danger" id="excluir-${element.id}">
+                            Excluir
+                        </button>
+                    </td>
+                `
+                document.querySelector('#catalogoProd>tbody').appendChild(novaLinha);
+            });
+            document.querySelector('#catalogoProd>tbody').addEventListener('click', editarDeletar)
+        }
+        getContent()
+
+        //editar
+        const editarDeletar = (event) => {
+            if(event.target.type == 'button'){
+                
+                const [action, index] = event.target.id.split('-')
+
+                if (action == 'editar'){
+                    editProd(index);
+                    // const response = await fetch(`http://localhost:3000/api/produto/${index}`)
+                }
+            }
+            
+        }
+
+        async function editProd(index) {
+            const response = await fetch('http://localhost:3000/api/produtor/catalogo')
+                
+            const data = await response.json()
+            const teste = await data.result;
+            
+            const editado = await fetch(`http://localhost:3000/api/produto/${parseInt(index)}`)
+
+        }
+
+        
+        // btnSalvarProd.onclick = e => {
+  
+        //     if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
+        //         return
+        //     }
+
+        //     e.preventDefault();
+
+        //     if (id !== undefined) {
+        //         itens[id].nome = sNome.value
+        //         itens[id].funcao = sFuncao.value
+        //         itens[id].salario = sSalario.value
+        //     } else {
+        //         itens.push({'nome': sNome.value, 'funcao': sFuncao.value, 'salario': sSalario.value})
+        //     }
+
+        //     setItensBD()
+
+        //     modal.classList.remove('active')
+        //     loadItens()
+        //     id = undefined
+        // }
+            
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
@@ -49,34 +139,13 @@
                 <table id="catalogoProd" class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Preço</th>
-                        <th scope="col">Ações</th>
+                        <th width="250">Nome</th>
+                        <th width="600">Descrição</th>
+                        <th width="200">Preço</th>
+                        <th width="180">Ações</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@fat</td>
-                    </tr>
+                    <tbody id="bodyCatalogo">
                     </tbody>
                 </table>
             </div>
@@ -115,7 +184,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    
     <footer>
         <h3>Desenvolvido por Mateus de Oliveira Peternelli e Gustavo Costa Daguer</h3>
     </footer>
