@@ -11,9 +11,9 @@ Ele também se destina aos produtores de café, que podem colocar seu produto no
 
 ## Tecnologias Utilizadas
 
-HTML e CSS para o front
-Javascript para back
-Node.js e MYSQL para gerir os dados do banco de dados
+HTML 5 e CSS 3 para o front
+Javascript 1.5 para back
+Node.js 16.0.0 e MYSQL 8.0 para gerir os dados do banco de dados
 
 ## Regras do GIT
 
